@@ -1,4 +1,32 @@
 READ and WRITE "lokasiKostumer" with STRING
 READ and WRITE "listRestoran" with []
-STORE "listRestoran" with [{idRestoran: '1', nama: 'rumah makan padang'}]
-PRINT listRestoran
+STORE "listRestoran" with [{idRestoran: '1', nama: 'rumah makan padang', restoranOpen: 'TRUE'}]
+PRINT "listRestoran"[]
+IF "listRestoran"['restoranOpen'] is TRUE
+    READ and WRITE "menuMakanan" with []
+    STORE "menuMakanan" with [{idMakanan: '1', namaMakanan: 'Rendang', harga: '10000'}]
+    PRINT "menuMakanan"[]
+    READ and WRITE "keranjang" with []
+    READ and WRITE "totalHarga" with INT
+    READ and WRITE "pembayaran" with BOOLEAN
+    READ and WRITE "i" with INT
+    READ and WRITE "selesaiBerbelanja" with BOOLEAN
+    STORE "i" with 0
+    STORE "pembayaran" with FALSE
+    STORE "selesaiBerbelanja" with FALSE
+    
+    WHILE "pembayaran" is not TRUE
+        DO
+        WHILE "selesaiBerbelanja" is not TRUE
+            DO
+            ADD "menuMakanan" to "keranjang"
+            ADD "menuMakanan"[harga] to "totalHarga"
+            ADD "i" by 1
+        
+    READ and WRITE "online pay" with INT
+    STORE "online pay" with "totalHarga"
+    PRINT "order siap dikirim ke" + "lokasiKostumer"
+
+
+
+
