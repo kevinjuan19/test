@@ -1,0 +1,4 @@
+READ and WRITE "lokasiKostumer" with STRING
+READ and WRITE "listRestoran" with []
+STORE "listRestoran" with [{idRestoran: '1', nama: 'rumah makan padang'}]
+PRINT listRestoran
